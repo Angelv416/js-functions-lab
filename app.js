@@ -141,19 +141,26 @@ Exercise 8:
 */
 
 const longestStringInArray = function (str) {
+  let longest = "";
+  for (let i = str.length; i > 0;) {
+    return longest
+  }
 
 }
 console.log(
   "Exercise 8 Result:\n",
   longestStringInArray(["Please", "do", "not", "pet", "the", "taco", "cat"])
 )
-
+// doesn't return anything :/
 /* 
 Exercise 9: 
   - Define a function, as a function declaration, `stringsLongerThan` that takes an array of strings and a number as arguments; and returns an array of the strings that are longer than the number passed in. For example, `stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3);` would return `["hello", "morning"]`.
 */
 
 
+function stringsLongerThan (str) {
+
+}
 
 console.log(
   "Exercise 9 Result:\n",
