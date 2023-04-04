@@ -40,16 +40,12 @@ Exercise 3:
   - Define a function, as a function declaration, `isCharAVowel` that takes a character as an argument and returns true if it is a vowel, false otherwise.
 */
 
-const vowels = ['A', 'E', 'I', 'O', 'U']
-function isCharAVowel(characters) {
-  let letter = []
-  for (let x = 0, x < vowels.length, x++) {
-    letter.push(characters);
-  }
-  if letter.includes(vowels[x]) {
-    return true;
+function isCharAVowel(character) {
+  const vowels = ['A', 'E', 'I', 'O', 'U']
+  if (vowels.includes(character.toLowerCase())) {
+    return true
   } else {
-    return false;
+    return false
   }
 }
 
@@ -100,14 +96,9 @@ Exercise 6:
   - Define a function, as a function expression, `numArgs` that returns the number of arguments passed to the function when called.
 */
 
-const numArgs = function(args) {
-  let items = []
-  for (let i = 0; i < args.length; i++) {
-    items.push(args[i]);
-  }
-  return items.length
+const numArgs = function(...args) {
+  return args.length
 }
-// log results were really strange with one and I wasn't sure on what to change 
 
 console.log(
 `Exercise 6 Result: 
@@ -126,9 +117,7 @@ Exercise 7:
 function reverseString(reversed) {
   let message ="";
   for (let i = reversed.length - 1; i > 0; i--) {
-    //starts from the end of my string argument and...
     message += reversed[i];
-    //adds each letter to the message variable
   }
   return message;
 }
@@ -141,12 +130,15 @@ Exercise 8:
 */
 
 const longestStringInArray = function (str) {
-  let longest = "";
-  for (let i = str.length; i > 0;) {
-    return longest
+  let longest = ""
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].length > longest.length) {
+      longest = str[i]
+    }
   }
-
+  return longest.length
 }
+
 console.log(
   "Exercise 8 Result:\n",
   longestStringInArray(["Please", "do", "not", "pet", "the", "taco", "cat"])
@@ -158,11 +150,20 @@ Exercise 9:
 */
 
 
-function stringsLongerThan (str) {
-
+function stringsLongerThan (str, num) {
+  let longestWords = num;
+  for (let i = 0; i < str.length; i++) {
+    if (longestWords < str[0].length) {
+      longestWords = str[i].length;
+    }
+  }
+  str = str.filter((element)=> {
+    return element.length > longestWords;
+  })
+  return str
 }
 
 console.log(
   "Exercise 9 Result:\n",
-  stringsLongerThan(["say", "goodnight", "whenever", "you", "like"], 3)  
+  stringsLongerThan(["say", "goodnight", "whenever", "you", "like"], 3)
 )
